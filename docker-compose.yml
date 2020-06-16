@@ -1,0 +1,50 @@
+
+    version: '3.3'
+    services:
+      server:
+        build: node/.
+        hostname: coordinator
+        container_name: coordinator
+        networks:
+          - default
+    
+      node0:
+        build: node/.
+        hostname: node0
+        container_name: node0
+        networks:
+          - default
+      node1:
+        build: node/.
+        hostname: node1
+        container_name: node1
+        networks:
+          - default
+      node2:
+        build: node/.
+        hostname: node2
+        container_name: node2
+        networks:
+          - default
+      node3:
+        build: node/.
+        hostname: node3
+        container_name: node3
+        networks:
+          - default
+      node4:
+        build: node/.
+        hostname: node4
+        container_name: node4
+        networks:
+          - default
+      node5:
+        build: node/.
+        hostname: node5
+        container_name: node5
+        networks:
+          - default
+    networks:
+      default:
+        driver: bridge
+    
