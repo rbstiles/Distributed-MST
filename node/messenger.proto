@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package ousystems;
+
+service messenger {
+    rpc send(Msg) returns (MsgAck) {}
+};
+
+message Msg {
+    string instruction = 1;
+    repeated string content = 2;
+}
+
+// Return this acknowledging the receipt of a message
+message MsgAck {
+  int32 status = 1;
+  string src = 2;
+  string dst = 3;
+}
+
+// Empty Message Type
+message NullMsg {
+  int32 status = 1;
+}
